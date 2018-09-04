@@ -1,12 +1,81 @@
-﻿<Window x:Class="HW_02_Final.MainWindow"
+﻿<Window x:Class="WpfApp3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HW_02_Final"
+        xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Mortgage Calculator" Height="300" Width="300">
+    <Canvas>
+        <Canvas.Background>
+            <LinearGradientBrush StartPoint="0,0"
+                                 EndPoint="1,1">
+                <GradientStop Color="White"
+                              Offset="0.0" />
+                <GradientStop Color="Pink"
+                              Offset="1" />
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <TextBlock Foreground="Red"
+                   Canvas.Left="29"
+                   Canvas.Top="15"
+                   FontSize="18">Mortgage Payment Calculator</TextBlock>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Height="45" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Black"
+                           Width="82"
+                           Margin="23,10,15,0">
+                           Principal:</TextBlock>
+                <TextBox Background="white"
+                         Text="{Binding Principal}"
+                         Name="Principal"
+                         Width="120"
+                         Margin="25,10,25,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Black"
+                           Width="82"
+                           Margin="23,10,15,0">
+                           Interest(%):</TextBlock>
+                <TextBox Background="White"
+                         Text="{Binding interest}"
+                         Name="Interest"
+                         Width="120"
+                         Margin="25,10,25,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Black"
+                           Width="82"
+                           Margin="23,10,15,0">
+                           Term:</TextBlock>
+                <TextBox Background="White"
+                         Text="{Binding term}"
+                         Name="Term"
+                         Width="120"
+                         Margin="25,10,25,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Black"
+                           Width="82"
+                           Margin="23,10,15,0">
+                           Down Payment:</TextBlock>
+                <TextBox Background="White"
+                         Text="{Binding term}"
+                         Name="Down"
+                         Width="120"
+                         Margin="25,10,25,0" />
+            </StackPanel>
+        </StackPanel>
+
+        <Button Content="Calculate" Click="Button_Click" Canvas.Left="115" Canvas.Top="185"/>
+        <TextBlock Foreground="Black"
+                   Canvas.Top="225"
+                   Canvas.Left="23">Monthly Payment:</TextBlock>
+        <TextBox Background="white"
+                 Name="Monthly"
+                 Width="120"
+                 Canvas.Left="145"
+                 Canvas.Top="225" />
+    </Canvas>
 </Window>
